@@ -1,0 +1,35 @@
+{{template "base"}}
+
+{{define "title"}} Home{{end}}
+
+<div class="wrapper">
+    <form method="POST" action="/process">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 two"></div>
+                <div class="col-md-6 post-box">
+                    <div class="big-cont">
+                        <div class="cont1">
+
+                            <div class="input-big">
+                                <button type="button" class="btn top-btn btn-outline-secondary">Add a cover image</button>
+                                <input placeholder="New post title here..." type="text" name="title" class="title">
+                            </div>
+                        </div>
+                        <div class="cont2">
+                            <input type="text" name="body" class="bd">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 for"></div>
+            </div>
+
+
+            <div class="save">
+                <button type="submit" name="submit" class="btn btn-lg btn-primary"> Publish</button>
+                <button type="button" class="btn btn-lg btn-link">Save draft</button>
+            </div>
+        </div>
+    </form>
+</div>
+{{/*{{end}}*/}}

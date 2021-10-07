@@ -1,0 +1,31 @@
+CREATE TABLE users (
+                          user_id VARCHAR PRIMARY KEY,
+                          username VARCHAR ( 50 ) UNIQUE NOT NULL,
+                          firstname VARCHAR ( 50 ) UNIQUE NOT NULL,
+                          lastname VARCHAR ( 50 ) UNIQUE NOT NULL,
+                          followers VARCHAR ( 50 ) UNIQUE NOT NULL,
+                          read_date VARCHAR ( 50 ) UNIQUE NOT NULL,
+                          dob VARCHAR ( 50 ) UNIQUE NOT NULL,
+                          password VARCHAR ( 50 ) NOT NULL,
+                          email VARCHAR ( 255 ) UNIQUE NOT NULL,
+                          createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                          lastLogin TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE posts (
+                       ID VARCHAR PRIMARY KEY,
+                       Title VARCHAR ( 50 ) UNIQUE NOT NULL,
+                       Body VARCHAR ( 255 ) UNIQUE NOT NULL,
+                       Author VARCHAR ( 255 ) UNIQUE NOT NULL,
+                       CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       LastUpdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       FOREIGN KEY (Author) REFERENCES users(username)
+);
+CREATE TABLE comments (
+                       user_id VARCHAR PRIMARY KEY,
+                       title VARCHAR ( 50 ) UNIQUE NOT NULL,
+                       body VARCHAR ( 255 ) UNIQUE NOT NULL,
+                       Author VARCHAR ( 255 ) UNIQUE NOT NULL,
+                       lastUpdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       FOREIGN KEY (Author) REFERENCES users(username)
+);

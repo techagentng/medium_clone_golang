@@ -1,0 +1,20 @@
+{{template "base"}}
+
+{{define "title"}} Parced form{{end}}
+
+<div class="wrapper">
+
+    <ul class="list-group list-group-flush uswag">
+        {{/*range .*/}}
+            <li class="list-group-item">
+
+                <a href="/" class="home">Edit</a>
+                <a href="/blog/{{.UserId}}"><button type="button" class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
+                <h3>{{.Title}}</h3>
+                <p>{{.Body}}</p>
+            </li>
+        {{/*end*/}}
+    </ul>
+
+
+</div>
