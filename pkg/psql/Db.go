@@ -1,4 +1,4 @@
-package database
+package psql
 
 import (
 	"database/sql"
@@ -13,17 +13,22 @@ const (
 
 )
 
-// Db Inject database instance into model layer for easy testing
+// Db Inject psql instance into model layer for easy testing
 
 
-func ConnectDb () *sql.DB {
+func ConnectDb () (*sql.DB, error) {
 	var Db *sql.DB
 	var err error
 	psqlconn := fmt.Sprintf("host = %s port = %d user = %s dbname = %s sslmode = disable", host, port, user, dbname)
 	Db, err = sql.Open("postgres", psqlconn)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
-	fmt.Println("database connected")
-	return Db
+
+	if err = Db.Ping(); err != nil {
+		return nil, err
+		Db.Close()
+	}
+	fmt.Println("psql connected")
+	return Db, nil
 }

@@ -3,95 +3,156 @@
     padding: 0;
     box-sizing: border-box;
 }
-.wrapper{
-    padding-left: 0;
-    background-color: #efefef;
-    height: 100vh;
+.logo img{
+    position: absolute;
+    top: 26px;
+    left: 20px;
+    width: 150px;
 }
-.atag:hover{
-    background-color: transparent;
-    text-decoration: none;
+.blue-overlay{
+    width: 100%;
+    height: 400px;
+    background-color: #C4E2FF;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.nav-extended{
+    height: 100px !important;
+    background-color: rgba(0,0,0,0.0) !important;
+}
+
+.mobile a{
+    width: 130px;
+    margin-top: 27px;
+    margin-right: 20px;
+    border-radius: 27px;
+    text-align: center;
+    line-height: 43px;
+    color: white;
+    background-color:black;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.img-blue{
+    height: 300px;
+    position: relative;
+    margin-top: 98px;
+}
+.img-blue img{
+    width: 70%;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+/**Modal CSS**/
+.modal-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s;
+    z-index: 600;
+}
+.moda h3{
+    position: absolute;
+    top: 12px;
+}
+.bg-active{
+    visibility: visible;
+    opacity: 1;
+}
+.moda{
+    background-color: white;
+    opacity: 0.4;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.modaBox{
+    width: 400px;
+    height: 600px;
+    margin-top: 50px;
+
+}
+.modal-close{
+    font-size: 1.5rem;
+    position: absolute;
+    top: .5rem;
+    right: 1.8rem;
+    cursor: pointer;
+    font-weight: 900;
+    border-radius: 50px;
+    color: black;
+    padding: 2px 7px;
+}
+.formBox{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    margin-top: 50px;
+}
+.text-content{
+    width: 450px;
+    height: 400px;
+    position: absolute;
+    top: 100px;
+    left: 140px;
+}
+.text-content p{
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.hbtn{
+    margin-top: 27px;
+    margin-right: 20px;
+    border-radius: 27px;
+    text-align: center;
+    color: black;
+    background-color:rgb(255, 255, 255);
+    cursor: pointer;
+    width: 170px;
+    height: 30px;
+    display: block;
+    border: 2px solid black;
+}
+.ptag{
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+.waves-light{
+    background-color: black;
     color: white;
 }
-.atag{
-    color: darkblue;
+@media(max-width: 760px){
+    .logo img{
+        width: 145px;
+        margin-top: 10px;
+    }
 }
-.post-box {
-    height: 550px;
-    width: 400px;
-}
-.two {
-    height: 550px;
-}
-.for {
-    height: 550px;
-}
-
-
-.big-cont{
-    position: relative;
-    width: 100%;
-    height: 600px;
-    padding-top: 20px;
-}
-.cont2{
-    width: 100%;
-    height: 340px;
-    position: relative;
-    bottom: 0;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-.cont1{
-    height: 200px;
-    width: 100%;
-    position: relative;
-}
-input.title{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 220px;
-    outline: none;
-    border: none;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    text-indent: 30px;
-}
-.top-btn{
-    margin-left: 30px;
-    position: absolute;
-    z-index: 3;
-}
-::placeholder {
-    color: #717171;
-    font-size: 2rem;
-    font-family: 'Alfa Slab One', cursive;
-}
-.bgnil{
-    background-color: #efefef;
-}
-.bd{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border: none;
-}
-.save{
-    width: 305px;
-    height: 70px;
-    position: absolute;
-    bottom: 30px;
-    margin-left: 240px;
-}
-
-/* Blog */
-.uswag{
-    width: 65%;
-    height: 800px;
-    margin: 0 auto;
-    display: flex;
-}
-.bgnil{
-    margin-bottom: 14px;
+@media(min-width: 992px){
+    .blue-overlay{
+        height: 450px;
+    }
+    .img-blue img{
+        width: 410px;
+        height: 340px;
+        margin-right: 140px;
+    }
 }

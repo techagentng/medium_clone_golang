@@ -1,2 +1,2 @@
 dev:
-	cmd/web/*.go -addr=":8000"
+	go run ./cmd/web/*.go -addr=":5100"
