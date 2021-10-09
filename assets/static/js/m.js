@@ -8,3 +8,5 @@ let closeModal = document.querySelector('.modal-close');
 closeModal.addEventListener('click', function(){
     modalBg.classList.remove('bg-active')
 })
+
+let modalBg2 = document.querySelector('.modal-bg2');

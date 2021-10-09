@@ -14,8 +14,8 @@ func (app *application) Router(r *gin.Engine) *gin.Engine {
 
 	r.GET("/", app.home)
 	//r.GET("/register", app.RegisterPageHandler)
-	r.GET("/register", app.registerUser)
-	//r.GET("/login", app.LoginPageHandler)
+	r.POST("/register", app.registerUser)
+	r.GET("/login", app.LoginPageHandler)
 	r.POST("/login", app.LoginUser)
 	//r.POST("/assets", app.viewAllPost)
 	return r

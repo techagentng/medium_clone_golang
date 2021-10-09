@@ -11,10 +11,9 @@ import (
 )
 
 func (app *application) home(c *gin.Context) {
-	c.HTML(http.StatusOK, "home.page.gohtml", gin.H{
-		"title": "Main website",
-	})
+	c.HTML(http.StatusOK, "home.page.gohtml", nil)
 }
+
 func (app *application) RegisterPageHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "registerUser.page.gohtml", gin.H{
 		"title": "Main website",
@@ -70,6 +69,10 @@ func (app *application) viewAllPost(c *gin.Context)  {
 	}
 	fmt.Println(users)
 }
+func (app *application) LoginPageHandler(c *gin.Context) {
+	c.HTML(http.StatusOK, "login.page.gohtml", nil)
+}
+
 func (app *application) LoginUser(c *gin.Context)  {
 	var blog = model.Post{}
 	users, err := blog.GetAllContents()
