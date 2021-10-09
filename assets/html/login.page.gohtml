@@ -2,6 +2,35 @@
 
 {{define "title"}} Parced form{{end}}
 
+<div class="cover"></div>
+<div class="form-space">
+    <div class="space-wrapper">
+        <div class="one">
+            <h4>Sign in with email</h4>
+            <p>Enter the email address associated with your account, and we’ll send a magic link to your inbox.</p>
+        </div>
+        <div class="two">
+            <div class="input-field col s6">
+                <input id="last_name" name="email" type="email" class="validate">
+                <label for="last_name">Email</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="password" name="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+            <a href="#">Continue</a>
+        </div>
+    </div>
+</div>
+<nav class="nav-extended N/A transparent">
+    <div class="nav-wrapper">
+        <a href="#" class="logo"><img src="logo.png" alt=""></a>
+        <ul class="right mobile">
+            <a class="#">Get Started</a>
+        </ul>
+    </div>
+</nav>
+
 <div class="blue-overlay">
     <div class="text-content">
         <h2>Medium is a place to write, read and connect</h2>
@@ -14,13 +43,38 @@
 
 </div>
 
-<!---Login modal-->
-<div class="modal-bg2">
+<!---Index modal-->
+<div class="modal-bg">
     <div class="moda">
         <span class="modal-close">X</span>
-        <h3 class="title" style="color: black;">Login to Medium</h3>
+        <h3 class="title" style="color: black;">Join Medium</h3>
         <div class="modaBox">
+            <form class="formBox" action="">
+                <div class="input-field">
+                    <input type="text" id="first_name" name="firstname" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
 
+                <div class="input-field">
+                    <input type="text" id="last_name" name="lastname" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" id="email" name="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" id="Password" class="validate">
+                    <label for="Password">Password</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" id="Confirm" name="Confirm" class="validate">
+                    <label for="Confirm">Confirm Password</label>
+                </div>
+            </form>
         </div>
     </div>
 
