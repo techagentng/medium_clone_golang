@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/techagentng/medium/cmd/interfaces"
 	"github.com/techagentng/medium/cmd/model"
@@ -22,10 +23,10 @@ var app= &application{
 	errorLog: log.New(os.Stderr,"ERROR\t",log.Ltime|log.Ldate|log.Lshortfile),
 	infoLog: log.New(os.Stdout,"INFO\t",log.Ltime|log.Ldate),
 	user: &model.UserModel{Db: db},
-
 }
 
 func main()  {
+	fmt.Println(db, "ggggg")
 	r := gin.Default()
 	app.Router(r)
 

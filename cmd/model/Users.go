@@ -24,6 +24,7 @@ type UserModel struct {
 const (
 	DBTABLE = "users"
 )
+
 func (model *UserModel) GetUserByEmail(email string) (bool, User) {
 	var user User
 	row := model.Db.QueryRow(fmt.Sprintf("SELECT id, email, password FROM %s WHERE email = $1",DBTABLE), email)
@@ -38,6 +39,7 @@ func (model *UserModel) GetUserByEmail(email string) (bool, User) {
 }
 
 func (model *UserModel) SaveUser(user *User) (string, error) {
+	fmt.Println(model.Db, "dftgyhuji")
 	stmt, err := model.Db.Prepare(fmt.Sprintf("INSERT INTO %s(id, firstname, lastname, email, password, created_at, updated_at) VALUES($1, $2, $3, $4, $5, $6, $7)", DBTABLE))
 	if err != nil {
 		return "", err
@@ -46,7 +48,6 @@ func (model *UserModel) SaveUser(user *User) (string, error) {
 	if err != nil {
 		return "", err
 	}
-
 	return user.ID, nil
 }
 

@@ -3,6 +3,7 @@ package psql
 import (
 	"database/sql"
 	"fmt"
+	_ "github.com/lib/pq"
 )
 
 const (
@@ -22,7 +23,7 @@ func ConnectDb () (*sql.DB, error) {
 	psqlconn := fmt.Sprintf("host = %s port = %d user = %s dbname = %s sslmode = disable", host, port, user, dbname)
 	Db, err = sql.Open("postgres", psqlconn)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 
 	if err = Db.Ping(); err != nil {
