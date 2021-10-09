@@ -21,14 +21,6 @@ type UserModel struct {
 	Db  *sql.DB
 }
 
-//// CreateUser method inserts form inputs to the posts table
-//func (d  *Database)CreateUser(u *User)  {
-//	_, err := d.Db.Exec(`INSERT INTO users(ID,Firstname,Lastname,Email,Password,Confirm,CreatedAt,UpdatedAt) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
-//`,u.ID,u.FirstName,u.LastName,u.Email,u.Password,u.Confirm,u.CreatedAt,u.UpdatedAt)
-//	if err != nil{
-//		panic(err)
-//	}
-//}
 const (
 	DBTABLE = "users"
 )
